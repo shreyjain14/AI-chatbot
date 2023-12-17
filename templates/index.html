@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask Image</title>
+</head>
+<body>
+
+<div class="chat">
+
+    {% if chat %}
+
+        {% for message in chat %}
+
+            {{  message  }}
+            <br>
+
+        {% endfor %}
+
+    {% endif %}
+
+</div>
+
+<form method="POST" action="">
+
+    {{ form.hidden_tag() }}
+    {{ form.question }}<br><br>
+    {{ form.submit }}
+
+</form>
+
+<a href="{{  url_for('reset')  }}">reset chat</a>
+
+</body>
+</html>
